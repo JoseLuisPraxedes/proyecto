@@ -1,0 +1,27 @@
+crudBundle\Entity\direccion:
+    type: entity
+    table: null
+    repositoryClass: crudBundle\Repository\direccionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        calle:
+            type: string
+            length: '30'
+        colonia:
+            type: string
+            length: '30'
+        delegacion:
+            type: string
+            length: '30'
+        numero:
+            type: integer
+    lifecycleCallbacks: {  }
+     #OneToMany:
+      #  products:
+       #     targetEntity: usuario
+        #    mappedBy: direccion

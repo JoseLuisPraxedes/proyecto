@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Inicio!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet"  href="{{ asset('public/bootstrap/css/bootstrap.min.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+
+    <ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="{{ path('direccion_index') }}">Direcciones</a></li>
+    <li><a data-toggle="tab" href="{{ path('usuario_index')}}">Usuarios</a></li>
+    </ul>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <script type="text/javascript" src="public/bootstrap/js/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="public/bootstrap/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,41 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Lista de usuarios</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido paterno</th>
+                <th>Apellido materno</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td><a href="{{ path('usuario_show', { 'id': usuario.id }) }}">{{ usuario.id }}</a></td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apPat }}</td>
+                <td>{{ usuario.apMat }}</td>
+                <td>{{ usuario.edad }}</td>
+                <td>                 
+                    <a href="{{ path('usuario_show', { 'id': usuario.id }) }}" class="btn btn-info">ver</a>
+                       
+                    <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}" class="btn btn-warning">editar</a>
+                      
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+            <a href="{{ path('usuario_new') }}" class="btn btn-success">Crea nuevo usuario</a>
+    </div>
+{% endblock %}

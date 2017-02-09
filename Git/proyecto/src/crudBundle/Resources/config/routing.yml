@@ -1,0 +1,11 @@
+crud_usuario:
+    resource: "@crudBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
+crud_direccion:
+        resource: "@crudBundle/Resources/config/routing/direccion.yml"
+        prefix:   /direccion    
+
+crud_homepage:
+    path:     /index
+    defaults: { _controller: crudBundle:Default:index }

@@ -1,0 +1,34 @@
+crudBundle\Entity\usuario:
+    type: entity
+    table: null
+    repositoryClass: crudBundle\Repository\usuarioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: '30'
+        apPat:
+            type: string
+            length: '30'
+            column: ApPat
+        apMat:
+            type: string
+            length: '30'
+            column: ApMat
+        edad:
+            type: integer
+    lifecycleCallbacks: {  }
+
+
+    ManyToOne:
+        category:
+            targetEntity: direccion
+            inversedBy: usuario
+            joinColumn:
+                name: direccion_id
+                referencedColumnName: id
